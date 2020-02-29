@@ -3,6 +3,8 @@ import Axios from 'axios'
 import Store from './store'
 import App from './App.vue'
 import Routes from './routing'
+import Collect from 'collect.js'
+import SpaceTime from 'spacetime'
 import VueRouter from 'vue-router'
 import Components from './components'
 
@@ -13,6 +15,11 @@ Vue.mixin({
             currentIndex: this.$route.query.index || 0,
         }
     },
+    computed: {
+        article() {
+            return this.$store.state.article
+        }
+    },
     watch: {
         '$route.query.index': function(index) {
             this.currentIndex = index
@@ -20,29 +27,19 @@ Vue.mixin({
         }
     },
     methods: {
-        getContent() {
-            const that = this
-            const isProduction = process.env.NODE_ENV === 'production'
-            const baseUrl = isProduction ? 'https://github.com/stephenlake/stephenlake.github.io/tree/master' : ''
-
-            Axios.get(`${baseUrl}/content`).then((response) => {
-                that.$store.state.index = response.data.sort().reverse()
-
-                Axios.get(`${baseUrl}/content/${this.$store.state.index[that.currentIndex]}`).then((response) => {
-                    that.$store.state.content = response.data
-                })
+        spacetime(date) {
+            return SpaceTime(date)
+        },
+        getArticles() {
+            Axios.get('https://api.github.com/repos/stephenlake/stephenlake.github.io/issues?state=closed&sort=created&direction=desc').then((response) => {
+                this.$store.state.index = Collect(response.data).where('user.login', 'stephenlake').all()
+                this.$store.state.article = this.$store.state.index[this.currentIndex]
             })
         }
     }
 })
 
 require('bootstrap')
-
-window.api = Axios.create({
-    'headers': {
-        'X-Requested-With': 'XMLHttpRequest',
-    }
-})
 
 const router = new VueRouter({
     routes: Routes,

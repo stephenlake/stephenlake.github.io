@@ -1,11 +1,12 @@
 <template>
 <div>
     <div class="row mt-5">
-        <div class="col-10">
-            <div class="article" v-if="$store.state.content" v-html="article"></div>
-        </div>
-        <div class="col-2">
-            <div style=""></div>
+        <div class="col-12">
+            <div class="article" v-if="$store.state.article">
+                <h4 class="date">{{ spacetime(article.created_at).format('nice') }}</h4>
+                <h1 class="title">{{ article.title }}</h1>
+                <div class="content" v-html="markdownToHtml(article.body)"></div>
+            </div>
         </div>
     </div>
     <div class="row mt-5">
@@ -30,15 +31,10 @@ let converter = new showdown.Converter({
 })
 
 export default {
-    computed: {
-        article() {
-            if (this.$store.state.content) {
-                return converter.makeHtml(this.$store.state.content)
-            }
-            return false
-        }
-    },
     methods: {
+        markdownToHtml(markdown) {
+            return converter.makeHtml(markdown)
+        },
         previousPost() {
             this.$router.replace({
                 query: {
@@ -55,14 +51,9 @@ export default {
         }
     },
     watch: {
-        '$store.state.content': function(content) {
-            if (content.length) {
-                setTimeout(() => {
-                    let titleElement = document.querySelector('.article h1:first-of-type')
-                    let titleContent = titleElement.innerText
-
-                    window.document.title = titleContent
-                }, 500)
+        '$store.state.article': function(article) {
+            if (article) {
+                window.document.title = article.title
             }
         }
     }

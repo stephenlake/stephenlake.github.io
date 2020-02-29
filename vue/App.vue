@@ -17,7 +17,7 @@ require('./assets/css/animate.css');
 
 export default {
     mounted() {
-        this.getContent()
+        this.getArticles()
     },
     data() {
         return {

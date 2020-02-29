@@ -36,7 +36,7 @@
     "sass-loader": "^7.1.0",
     "secure-ls": "^1.2.5",
     "showdown": "^1.9.1",
-    "spacetime": "^6.0.0",
+    "spacetime": "^6.4.1",
     "vue": "^2.5.17",
     "vue-apexcharts": "^1.5.2",
     "vue-code-highlight": "^0.7.4",
