@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+
+::selection {
+    background: #96ff85;
+    color: #1d2730;
+}
+
+::-moz-selection {
+    background: #96ff85;
+    color: #1d2730;
+}
+
+html {
+    height: 100%;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    font-smoothing: always;
+    -webkit-font-smoothing: always;
+    font-family: 'Quicksand';
+}
+
+body {
+    height: 100%;
+    font-family: 'Quicksand';
+    color: #3c4858;
+    background: #f7f7f7;
+}
+
+a {
+    color: #3c4858;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: inherit !important;
+}
+
+.article {
+    margin: 0 auto;
+}
+
+.article h1 {
+    color: #3c4858;
+    text-decoration: none;
+    width: auto;
+}
+
+.article h1:first-of-type {
+    border-left: 3px solid #3c4858;
+    padding-left: 15px;
+    margin: 30px 0 20px;
+}
+
+.article a,.article a:active,.article a:focus,.article a:visited,.article a:hover {
+    color: #75c56e !important;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px dotted #75c56e;
+}
+
+.font-smaller {
+    font-size: 65%;
+}
+
+pre {
+    display: block;
+    font-size: 87.5%;
+    color: #45e59a;
+    border-radius: 8px;
+    background: #1d2730;
+    -webkit-box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
+    box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
+    padding: 20px;
+    overflow-x: hidden;
+}
