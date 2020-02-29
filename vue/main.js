@@ -22,11 +22,13 @@ Vue.mixin({
     methods: {
         getContent() {
             const that = this
+            const isProduction = process.env.NODE_ENV === 'production'
+            const baseUrl = isProduction ? 'https://github.com/stephenlake/stephenlake.github.io/tree/master' : ''
 
-            Axios.get('/content/').then((response) => {
+            Axios.get(`${baseUrl}/content`).then((response) => {
                 that.$store.state.index = response.data.sort().reverse()
 
-                Axios.get(`/content/${this.$store.state.index[that.currentIndex]}`).then((response) => {
+                Axios.get(`${baseUrl}/content/${this.$store.state.index[that.currentIndex]}`).then((response) => {
                     that.$store.state.content = response.data
                 })
             })

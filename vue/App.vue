@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 require('./assets/css/bootstrap.css');
 require('./assets/css/style.css');
 require('./assets/css/animate.css');
