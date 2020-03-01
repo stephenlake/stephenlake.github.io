@@ -31,9 +31,15 @@ Vue.mixin({
             return SpaceTime(date)
         },
         getArticles() {
+            this.$store.state.loadingContent = true
+
             Axios.get('https://api.github.com/repos/stephenlake/stephenlake.github.io/issues?state=closed&sort=created&direction=desc').then((response) => {
                 this.$store.state.index = Collect(response.data).where('user.login', 'stephenlake').all()
                 this.$store.state.article = this.$store.state.index[this.currentIndex]
+            }).finally(() => {
+                setTimeout(() => {
+                    this.$store.state.loadingContent = false
+                }, 1000)
             })
         }
     }
