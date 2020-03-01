@@ -5,7 +5,6 @@ Vue.use(Vuex)
 
 const state = {
     index: 0,
-    content: false,
     loadingContent: true,
 }
 

@@ -12,7 +12,7 @@ Vue.use(VueRouter)
 Vue.mixin({
     data() {
         return {
-            currentIndex: this.$route.query.index || 0,
+            currentIndex: parseInt(this.$route.query.index || 0),
         }
     },
     computed: {
@@ -23,7 +23,7 @@ Vue.mixin({
     watch: {
         '$route.query.index': function(index) {
             this.currentIndex = index
-            this.getContent()
+            this.getArticles()
         }
     },
     methods: {
@@ -45,6 +45,8 @@ Vue.mixin({
         }
     }
 })
+
+window.spacetime = SpaceTime
 
 require('bootstrap')
 

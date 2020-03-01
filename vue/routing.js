@@ -1,4 +1,4 @@
-import Index from './components/views/Index'
+import Index from './components/views/Post/Index'
 
 export default [{
     path: '/',
