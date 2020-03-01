@@ -37,6 +37,7 @@ let showdown = require('showdown')
 let converter = new showdown.Converter({
     ghMentions: true,
     emoji: true,
+    openLinksInNewWindow: true,
 })
 
 export default {
@@ -57,13 +58,6 @@ export default {
                     index: parseInt(this.currentIndex + 1)
                 }
             })
-        }
-    },
-    watch: {
-        '$store.state.article': function(article) {
-            if (article) {
-                window.document.title = article.title
-            }
         }
     }
 }

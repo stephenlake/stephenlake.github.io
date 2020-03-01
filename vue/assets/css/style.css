@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap');
 
 ::selection {
     background: #96ff85;
@@ -25,12 +25,12 @@ html {
     user-select: text;
     font-smoothing: always;
     -webkit-font-smoothing: always;
-    font-family: 'Quicksand';
+    font-family: 'Zilla Slab';
 }
 
 body {
     height: 100%;
-    font-family: 'Quicksand';
+    font-family: 'Zilla Slab';
     color: #3c4858;
     background: #ffffff;
 }
@@ -60,7 +60,7 @@ a:focus {
 }
 
 .article h1:first-of-type {
-    border-left: 3px solid #3c4858;
+    border-left: 3px solid #66cc56;
     padding-left: 15px;
     margin: 30px 0 20px;
 }
