@@ -38,9 +38,7 @@ Vue.mixin({
                 this.$store.state.article = this.$store.state.index[this.currentIndex]
                 window.document.title = this.$store.state.article.title
             }).finally(() => {
-                setTimeout(() => {
-                    this.$store.state.loadingContent = false
-                }, 1000)
+                this.$store.state.loadingContent = false
             })
         }
     }
