@@ -9,6 +9,8 @@
             <span style="font-size: 60%">Slightly insane and insecure, but he's owning it.</span>
         </h2>
         <br><br>
+        <InfoBoxThingy/>
+        <br>
         <AnnoyingText />
     </div>
 </div>
