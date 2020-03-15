@@ -1,89 +1,150 @@
-@import url('https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+2:400,500,600,700,800|Bellota+Text:300,400,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 ::selection {
-    background: #96ff85;
-    color: #1d2730;
+  background: #96ff85;
+  color: #1d2730;
 }
 
 ::-moz-selection {
-    background: #96ff85;
-    color: #1d2730;
+  background: #96ff85;
+  color: #1d2730;
 }
 
 html {
-    height: 100%;
-    background-position: bottom;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    scroll-behavior: smooth;
-    -webkit-touch-callout: text;
-    -webkit-user-select: text;
-    -khtml-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-    font-smoothing: always;
-    -webkit-font-smoothing: always;
-    font-family: 'Zilla Slab';
+  height: 100%;
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  scroll-behavior: smooth;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-smoothing: always;
+  -webkit-font-smoothing: always;
+  font-family: "Baloo 2";
 }
 
 body {
-    height: 100%;
-    font-family: 'Zilla Slab';
-    color: #3c4858;
-    background: #ffffff;
+  height: 100%;
+  font-family: "Baloo 2";
+  color: #3c4858;
+  background: #ffffff;
 }
 
 a {
-    color: #3c4858;
+  color: #3c4858;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover,
 a:active,
 a:focus {
-    color: inherit !important;
+  color: inherit !important;
 }
 
 .article {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Baloo 2";
+}
+
+.thin-title {
+  font-weight: 300;
+  font-family: 'Bellota Text'
 }
 
 .article h1 {
-    color: #3c4858;
-    text-decoration: none;
-    width: auto;
+  color: #3c4858;
+  text-decoration: none;
+  width: auto;
+  font-family: "Baloo 2";
+}
+
+.article p {
+  font-family: "Baloo 2";
 }
 
 .article h1:first-of-type {
-    border-left: 3px solid #66cc56;
-    padding-left: 15px;
-    margin: 10px 0 5px;
+  border-left: 3px solid #66cc56;
+  padding-left: 15px;
+  margin: 10px 0 5px;
+}
+
+.article p img {
+  text-align: center !important;
+  display: block;
+  margin: 20px auto;
 }
 
 .article a, .article a:active, .article a:focus, .article a:visited, .article a:hover {
-    color: #75c56e !important;
-    font-weight: 700;
-    text-decoration: none;
-    border-bottom: 1px dotted #75c56e;
+  color: #75c56e !important;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px dotted #75c56e;
 }
 
 .font-smaller {
-    font-size: 65%;
+  font-size: 65%;
+}
+
+a.button, button {
+  padding: 0.75em 2em;
+  border-radius: 2em;
+  display: inline-block;
+  color: #fff;
+  background-color: #4fc08d;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+  border: 1px solid #4fc08d;
+  font-weight: 700;
+}
+
+a.button.gray {
+  background-color: #f6f6f6;
+  color: #4f5959;
+  border-color: #f6f6f6;
+}
+
+a.button.white {
+  background-color: #fff;
+  color: #42b983;
 }
 
 pre {
-    display: block;
-    font-size: 87.5%;
-    color: #45e59a;
-    border-radius: 8px;
-    background: #1d2730;
-    -webkit-box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
-    box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
-    padding: 20px;
-    overflow-x: hidden;
+  display: block;
+  font-size: 87.5%;
+  color: #45e59a;
+  border-radius: 8px;
+  background: #1d2730;
+  -webkit-box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
+  box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.split-white {
+  height: 50vh;
+  min-height: 50vh;
+  min-width: 100%;
+  width: 100%;
+  background: #ffffff;
+}
+
+.split-light {
+  top: 50vh;
+  height: 50vh;
+  min-height: 50vh;
+  background: #f6f6f6;
+  min-width: 100%;
+  width: 100%;
 }

@@ -4,10 +4,10 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-    index: 0,
-    loadingContent: true,
+  articles: false,
+  loading: true,
 }
 
 export default new Vuex.Store({
-    state
+  state
 })

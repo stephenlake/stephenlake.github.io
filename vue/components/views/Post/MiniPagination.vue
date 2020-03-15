@@ -1,10 +1,10 @@
 <template>
-<div class="row mt-5" v-if="!$store.state.loadingContent">
+<div class="row mt-5" v-if="!$store.state.loading">
     <div class="col-lg-6">
         <a href="javascript:;" @click="previousPost" v-if="hasPreviousPosts" class="float-left">
             <div>
                 <strong>Previous Post</strong>
-                <p>{{ $store.state.index[currentIndex-1].title }}</p>
+                <p>{{ $store.state.articles[currentIndex-1].title }}</p>
             </div>
         </a>
     </div>
@@ -12,7 +12,7 @@
         <a href="javascript:;" @click="nextPost" v-if="hasNextPosts" class="float-right">
             <div>
                 <strong>Next Post</strong>
-                <p>{{ $store.state.index[currentIndex+1].title }}</p>
+                <p>{{ $store.state.articles[currentIndex+1].title }}</p>
 
             </div>
         </a>
@@ -23,10 +23,10 @@
 export default {
     computed: {
         hasNextPosts() {
-            return this.$store.state.index[this.currentIndex+1] !== undefined
+            return this.$store.state.articles[this.currentIndex+1] !== undefined
         },
         hasPreviousPosts() {
-            return this.$store.state.index[this.currentIndex-1] !== undefined
+            return this.$store.state.articles[this.currentIndex-1] !== undefined
         }
     },
     methods: {
