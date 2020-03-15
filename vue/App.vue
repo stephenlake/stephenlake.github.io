@@ -3,7 +3,7 @@
   <top-bar-line :thickness="2" style="position: fixed;"></top-bar-line>
   <div class="container frame py-5">
     <div>
-      <div v-if="!me" class="row mt-5">
+      <div v-if="!$store.state.me" class="row mt-5">
         <div class="col-12">
           <center>
             <Loader />
@@ -12,37 +12,37 @@
       </div>
       <div v-else>
         <div class="row">
-          <div class="col-12">
-            <div class="media p-3">
-              <img :src="me.avatar_url" alt="" class="mr-5 avatar">
-              <div class="media-body">
-                <h1 class="thin-title" style="font-size: 52px; line-height: 0.8">
-                  <span class="font-weight-bold">{{ me.name }}</span><br>
-                  <small class="font-weight-light">Developer of Internet Things</small>
-                </h1>
-                <div class="my-4">
-                  <p style="font-size: 22px;">
-                    <div class="font-weight-bolder pastey">Thoughts of a full stack web developer</div>
-                    in the middle of nowhere talking to himself in the third person, creating new ideas before the last next best idea is done.
-                    Obsessing over code quality. Slightly insane and insecure, but he's owning it.
-                  </p>
-                </div>
-                <p>
-                  <router-link class="button gray" tag="a" :to="{name:'Home'}" v-if="$route.path !== '/'">
-                    <i class="fa fa-home fa-fw"></i> Homepage
-                  </router-link>
-                  <a class="button gray" target="_blank" href="https://github.com/stephenlake">
-                    <i class="fa fa-github fa-fw"></i> GitHub
-                  </a>
-                  <a class="button gray" target="_blank" href="https://stackoverflow.com/users/2634190/stephen-lake">
-                    <i class="fa fa-stack-overflow fa-fw"></i> StackOverflow
-                  </a>
-                  <a class="button gray" target="_blank" href="https://steamcommunity.com/id/stephenlake">
-                    <i class="fa fa-steam-square fa-fw"></i> Steam
-                  </a>
-                </p>
-              </div>
+          <div class="col-lg-3 col-sm-12 mb-4 text-xs-center text-sm-center text-md-center text-lg-left">
+            <center>
+              <img :src="$store.state.me.avatar_url" alt="" class="mr-lg-5 avatar">
+            </center>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+            <h1 class="thin-title" style="font-size: 52px; line-height: 0.8">
+              <span class="font-weight-bold">{{ $store.state.me.name }}</span><br>
+              <small class="font-weight-light">Developer of Internet Things</small>
+            </h1>
+            <div class="my-md-4 my-0">
+              <p style="font-size: 22px;">
+                <div class="font-weight-bolder pastey">Thoughts of a full stack web developer</div>
+                in the middle of nowhere talking to himself in the third person, creating new ideas before the last next best idea is done.
+                Obsessing over code quality. Slightly insane and insecure, but he's owning it.
+              </p>
             </div>
+            <p class="d-md-block d-none">
+              <router-link class="button gray" tag="a" :to="{name:'Home'}" v-if="$route.path !== '/'">
+                <i class="fa fa-home fa-fw"></i> Homepage
+              </router-link>
+              <a class="button gray" target="_blank" href="https://github.com/stephenlake">
+                <i class="fa fa-github fa-fw"></i> GitHub
+              </a>
+              <a class="button gray" target="_blank" href="https://stackoverflow.com/users/2634190/stephen-lake">
+                <i class="fa fa-stack-overflow fa-fw"></i> StackOverflow
+              </a>
+              <a class="button gray" target="_blank" href="https://steamcommunity.com/id/stephenlake">
+                <i class="fa fa-steam-square fa-fw"></i> Steam
+              </a>
+            </p>
           </div>
         </div>
       </div>
@@ -50,9 +50,6 @@
     <transition :duration="transitions.duration" :enterActiveClass="transitions.enterActiveClass" :leaveActiveClass="transitions.leaveActiveClass" :mode="transitions.mode">
       <router-view></router-view>
     </transition>
-    <div class="scroll-percentage">
-
-    </div>
   </div>
 </div>
 </template>
@@ -111,15 +108,10 @@ require('./assets/css/animate.css');
 
 export default {
   created() {
-    this.getArticles()
-    axios.get('https://api.github.com/users/stephenlake').then((r) => {
-      this.me = r.data
-    })
+    this.getEverything()
   },
   data() {
     return {
-      me: null,
-      repos: null,
       transitions: {
         duration: {
           enter: 500,

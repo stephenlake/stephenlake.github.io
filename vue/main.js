@@ -25,7 +25,7 @@ Vue.mixin({
     spacetime(date) {
       return SpaceTime(date)
     },
-    getArticles() {
+    getEverything() {
       this.$store.state.loading = true
 
       let url = 'https://api.github.com/repos/stephenlake/stephenlake.github.io/issues?sort=created&direction=desc'
@@ -36,10 +36,22 @@ Vue.mixin({
         url += '&state=all'
       }
 
+      Axios.get('https://api.github.com/users/stephenlake').then((r) => {
+        this.$store.state.me = r.data
+      })
+
       Axios.get(url).then((response) => {
         this.$store.state.articles = Collect(response.data).where('user.login', 'stephenlake')
       }).finally(() => {
         this.$store.state.loading = false
+      })
+
+      Axios.get('https://api.github.com/orgs/cloudcake/repos').then((r) => {
+        this.$store.state.repos = this.$store.state.repos.concat(r.data)
+      })
+
+      Axios.get('https://api.github.com/users/stephenlake/repos').then((r) => {
+        this.$store.state.repos = this.$store.state.repos.concat(r.data)
       })
     }
   }

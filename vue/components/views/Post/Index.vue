@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div v-if="$store.state.loadingContent" class="row mt-5">
+  <div v-if="$store.state.loading" class="row mt-5">
     <div class="col-12">
       <center>
         <Loader />
@@ -8,8 +8,7 @@
     </div>
   </div>
   <div v-else>
-    <MiniPagination />
-    <div class="row">
+    <div class="row mt-5">
       <div class="col-10 offset-1">
         <div class="article" v-if="article">
           <h1 class="title">{{ article.title }}</h1>
@@ -18,7 +17,6 @@
         </div>
       </div>
     </div>
-    <MiniPagination />
   </div>
 </div>
 </template>
@@ -42,6 +40,7 @@ export default {
     },
     defineCurrentArticle() {
       this.article = this.$store.state.articles.firstWhere('number', parseInt(this.$route.params.number))
+      window.document.title = this.article.title
     }
   },
   mounted() {
