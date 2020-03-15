@@ -7,8 +7,12 @@ import Collect from 'collect.js'
 import SpaceTime from 'spacetime'
 import VueRouter from 'vue-router'
 import Components from './components'
+import VueAnalytics from 'vue-analytics'
 
 Vue.use(VueRouter)
+Vue.use(VueAnalytics, {
+  id: 'UA-134646363-1'
+})
 
 Vue.prototype.stringLimit = function(string, limit, pattern) {
   limit = limit || 255
@@ -22,6 +26,9 @@ Vue.prototype.stringLimit = function(string, limit, pattern) {
 
 Vue.mixin({
   methods: {
+    track() {
+      this.$ga.page(this.$route.path)
+    },
     spacetime(date) {
       return SpaceTime(date)
     },
