@@ -83,7 +83,13 @@ h1, h2, h3, h4, h5, h6 {
 .article p img {
   text-align: center !important;
   display: block;
-  margin: 20px auto;
+  margin: 40px auto;
+  border-radius: 10px;
+}
+
+.article p img.shadow {
+  -webkit-box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61) !important;
+  box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61) !important;
 }
 
 .article a, .article a:active, .article a:focus, .article a:visited, .article a:hover {
@@ -132,19 +138,15 @@ pre {
   overflow-x: hidden;
 }
 
-.split-white {
-  height: 50vh;
-  min-height: 50vh;
-  min-width: 100%;
-  width: 100%;
-  background: #ffffff;
+code {
+  display: inline;
+  color: #fbc457;
+  border-radius: 5px;
+  padding: 2px;
+  overflow-x: hidden;
 }
 
-.split-light {
-  top: 50vh;
-  height: 50vh;
-  min-height: 50vh;
-  background: #f6f6f6;
-  min-width: 100%;
-  width: 100%;
+.badge-theme {
+  color: #ffffff;
+  background-color: #3c4858;
 }

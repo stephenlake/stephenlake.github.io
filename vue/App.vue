@@ -50,6 +50,9 @@
     <transition :duration="transitions.duration" :enterActiveClass="transitions.enterActiveClass" :leaveActiveClass="transitions.leaveActiveClass" :mode="transitions.mode">
       <router-view></router-view>
     </transition>
+    <div class="scroll-percentage">
+
+    </div>
   </div>
 </div>
 </template>
@@ -83,22 +86,20 @@
 
 img.avatar {
   border-radius: 50%;
-  transition: all 1s;
+  padding: 3px;
+  border: 1px solid #511b1f;
+  transition: all 500ms;
   width: 260px;
-  border: 4px solid #000;
-  filter: grayscale(45%);
+  border: 2px solid #000;
 }
 
 img.avatar:hover {
   border-style: dotted !important;
-  border-radius: 0;
-  border-top-left-radius: 30%;
-  border-bottom-right-radius: 30%;
   transform: scale(1.05);
-  padding: 5px;
+  padding: 3px;
   border: 1px solid #511b1f;
-  filter: grayscale(80%);
-  transition: all 1s;
+  filter: grayscale(45%);
+  transition: all 500ms;
 }
 </style>
 <script>
@@ -118,6 +119,7 @@ export default {
   data() {
     return {
       me: null,
+      repos: null,
       transitions: {
         duration: {
           enter: 500,

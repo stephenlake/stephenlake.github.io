@@ -28,7 +28,15 @@ Vue.mixin({
     getArticles() {
       this.$store.state.loading = true
 
-      Axios.get('https://api.github.com/repos/stephenlake/stephenlake.github.io/issues?state=closed&sort=created&direction=desc').then((response) => {
+      let url = 'https://api.github.com/repos/stephenlake/stephenlake.github.io/issues?sort=created&direction=desc'
+
+      if (process.env.NODE_ENV === 'production') {
+        url += '&state=closed'
+      } else {
+        url += '&state=all'
+      }
+
+      Axios.get(url).then((response) => {
         this.$store.state.articles = Collect(response.data).where('user.login', 'stephenlake')
       }).finally(() => {
         this.$store.state.loading = false
