@@ -40,6 +40,11 @@ export default {
     },
     defineCurrentArticle() {
       this.article = this.$store.state.articles.firstWhere('number', parseInt(this.$route.params.number))
+
+      if (!this.article) {
+        this.article = this.$store.state.articles.first()
+      }
+
       window.document.title = this.article.title
       this.track()
     }
