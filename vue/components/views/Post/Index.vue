@@ -41,6 +41,7 @@ export default {
     defineCurrentArticle() {
       this.article = this.$store.state.articles.firstWhere('number', parseInt(this.$route.params.number))
       window.document.title = this.article.title
+      this.track()
     }
   },
   mounted() {

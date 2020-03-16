@@ -27,6 +27,7 @@
 export default {
   mounted() {
     window.document.title = 'Homepage'
+    this.track()
   }
 }
 </script>
