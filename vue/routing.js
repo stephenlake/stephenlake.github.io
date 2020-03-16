@@ -10,5 +10,10 @@ export default [{
     path: '/blog/or/rant/or/whatever/im/calling/it/number/:id',
     name: 'Post',
     component: Post
+  },
+  {
+    path: '/p/:id',
+    name: 'ShortPost',
+    component: Post
   }
 ]
