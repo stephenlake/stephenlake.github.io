@@ -39,7 +39,7 @@ export default {
       return converter.makeHtml(markdown)
     },
     defineCurrentArticle() {
-      this.article = this.$store.state.articles.firstWhere('number', parseInt(this.$route.params.number))
+      this.article = this.$store.state.articles.firstWhere('id', parseInt(this.$route.params.id))
 
       if (!this.article) {
         this.article = this.$store.state.articles.first()

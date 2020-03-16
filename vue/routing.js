@@ -7,7 +7,7 @@ export default [{
     component: Home
   },
   {
-    path: '/blog/or/rant/or/whatever/im/calling/it/number/:number',
+    path: '/blog/or/rant/or/whatever/im/calling/it/number/:id',
     name: 'Post',
     component: Post
   }
