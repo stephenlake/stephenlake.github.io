@@ -46,8 +46,6 @@ export default {
   mounted() {
     window.document.title = 'Homepage'
     this.track()
-
-    console.log(this.groupedRepos)
   }
 }
 </script>
