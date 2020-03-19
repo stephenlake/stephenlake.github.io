@@ -16,18 +16,38 @@
     <div class="col-12 text-center mb-5 mt-md-5 mt-0">
       <h4>Stuff I've written<br><small class="text-muted">Sadly the stuff I'm most proud of has to remain private.</small></h4>
     </div>
-    <div class="col-lg-4 col-md-12 text-left mb-5" v-for="repo in $store.state.repos">
-      <h4><span class="badge badge-theme">{{ repo.language }}</span> {{ repo.name }}</h4>
-      <h6 class="text-muted">{{ repo.description }}</h6>
+    <div class="col-lg-12 text-left mb-5" v-for="(group, language, index) in groupedRepos">
+      <div class="row">
+        <div class="col-12 mb-4">
+          <h4><span class="badge badge-theme">{{ language }}</span></h4>
+        </div>
+        <div class="col-lg-4 col-md-12 text-left mb-3" v-for="repo in group">
+          <h4>
+            <a :href="repo.html_url" target="_blank">
+              {{ repo.name }}
+            </a>
+          </h4>
+          <h6 class="text-muted">{{ repo.description }}</h6>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 </template>
 <script>
+import Collect from 'collect.js'
+
 export default {
+  computed: {
+    groupedRepos() {
+      return Collect(this.$store.state.repos).sortBy('language').groupBy('language').all()
+    },
+  },
   mounted() {
     window.document.title = 'Homepage'
     this.track()
+
+    console.log(this.groupedRepos)
   }
 }
 </script>
