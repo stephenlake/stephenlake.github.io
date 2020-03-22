@@ -79,9 +79,15 @@ Vue.mixin({
 
 window.spacetime = SpaceTime
 
-const router = new VueRouter({
+let router = new VueRouter({
   routes: Routes,
   mode: 'hash'
+})
+
+router.beforeEach((to, from, next) => {
+  next()
+
+  window.scrollTo(0, 0)
 })
 
 new Vue({
