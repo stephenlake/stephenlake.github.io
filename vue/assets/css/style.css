@@ -136,7 +136,7 @@ pre {
   -webkit-box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
   box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
   padding: 20px;
-  overflow-x: hidden;
+  min-width: 100%;
 }
 
 code {
@@ -150,4 +150,8 @@ code {
 .badge-theme {
   color: #ffffff;
   background-color: #3c4858;
+}
+
+.language-html .token.tag, .language-html .token.operator, .language-html .token.number {
+  color: #7eb6f6;
 }

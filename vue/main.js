@@ -8,6 +8,18 @@ import SpaceTime from 'spacetime'
 import VueRouter from 'vue-router'
 import Components from './components'
 import VueAnalytics from 'vue-analytics'
+import VueCodeHighlight from 'vue-code-highlight'
+
+// Code Highlighting
+Vue.use(VueCodeHighlight)
+
+import 'prism-es6/components/prism-markup-templating'
+import 'prism-es6/components/prism-markup'
+import 'prism-es6/components/prism-php'
+import 'prism-es6/components/prism-css'
+
+require('../node_modules/vue-code-highlight/themes/duotone-sea.css')
+require('../node_modules/vue-code-highlight/themes/window.css')
 
 Vue.use(VueRouter)
 Vue.use(VueAnalytics, {
