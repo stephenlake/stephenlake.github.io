@@ -15,6 +15,7 @@ Vue.use(VueCodeHighlight)
 
 import 'prism-es6/components/prism-markup-templating'
 import 'prism-es6/components/prism-markup'
+import 'prism-es6/components/prism-bash'
 import 'prism-es6/components/prism-php'
 import 'prism-es6/components/prism-css'
 

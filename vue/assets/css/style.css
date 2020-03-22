@@ -2,8 +2,8 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 ::selection {
-  background: #96ff85;
-  color: #1d2730;
+  background: #96ff85 !important;
+  color: #1d2730 !important;
 }
 
 ::-moz-selection {
@@ -137,6 +137,9 @@ pre {
   box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.61);
   padding: 20px;
   min-width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
+  margin: 30px auto !important;
 }
 
 code {
@@ -154,4 +157,41 @@ code {
 
 .language-html .token.tag, .language-html .token.operator, .language-html .token.number {
   color: #7eb6f6;
+}
+
+code[class*="language-bash"], pre[class*="language-bash"] {
+  color: #c9d8e8 !important;
+}
+
+code[class*="language-bash"] .token.function, pre[class*="language-bash"] .token.function {
+  color: #ea8b8b;
+}
+
+code[class*="language-bash"] .token.punctuation, pre[class*="language-bash"] .token.punctuation {
+  color: #ffffff;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+/* width */
+pre::-webkit-scrollbar {
+  height: 8px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7bd86c !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6bb95f !important;
 }
