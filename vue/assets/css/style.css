@@ -85,6 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   margin: 40px auto;
   border-radius: 10px;
+  max-width: 100% !important;
 }
 
 .article p img.shadow {
@@ -140,7 +141,7 @@ pre {
 
 code {
   display: inline;
-  color: #fbc457;
+  color: #22b1f7;
   border-radius: 5px;
   padding: 2px;
   overflow-x: hidden;

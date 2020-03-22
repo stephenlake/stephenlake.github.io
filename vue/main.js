@@ -66,8 +66,6 @@ Vue.mixin({
 
 window.spacetime = SpaceTime
 
-require('bootstrap')
-
 const router = new VueRouter({
   routes: Routes,
   mode: 'hash'

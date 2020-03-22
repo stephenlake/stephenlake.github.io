@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="row mt-5" v-if="!$store.state.loading">
-    <div class="article-preview col-lg-6 col-md-12 text-center mb-md-0 mb-5" v-for="(post, index) in $store.state.articles">
+    <div class="article-preview col-lg-6 col-md-12 text-center mb-5" v-for="(post, index) in $store.state.articles">
       <router-link tag="a" :to="{name:'ShortPost', params: { id: post.id }}">
         <h6 :class="{ pastey: index == 0 }">
           {{ spacetime(post.created_at, 'UTC').goto(spacetime().timezone().name).format('{day}, {date-ordinal} of {month} {year}') }}
@@ -13,9 +13,6 @@
     </div>
   </div>
   <div class="row mt-5" v-if="$store.state.repos.length">
-    <div class="col-12 text-center mb-5 mt-md-5 mt-0">
-      <h4>Stuff I've written<br><small class="text-muted">Sadly the stuff I'm most proud of has to remain private.</small></h4>
-    </div>
     <div class="col-lg-12 text-left mb-5" v-for="(group, language, index) in groupedRepos">
       <div class="row">
         <div class="col-12 mb-4">
