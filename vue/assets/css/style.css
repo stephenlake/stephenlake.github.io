@@ -80,6 +80,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 0 5px;
 }
 
+.article .content h2, .article .content h3, .article .content h4 {
+  margin-top: 50px;
+}
+
 .article p img {
   text-align: center !important;
   display: block;

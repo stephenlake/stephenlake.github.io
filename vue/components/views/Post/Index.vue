@@ -25,7 +25,6 @@
         <div class="article" v-if="article">
           <h1 class="title">{{ article.title }}</h1>
           <h4 class="date mb-5">{{ spacetime(article.created_at, 'UTC').goto(spacetime().timezone().name).format('{day}, {date-ordinal} of {month} {year} at around {time}') }} ({{ spacetime().timezone().name }})</h4>
-
           <div class="content" v-highlight v-html="markdownToHtml(article.body)"></div>
         </div>
         <div class="mt-5">
