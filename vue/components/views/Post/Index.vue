@@ -18,8 +18,8 @@
     <div class="row">
       <div class="col-10 offset-1">
         <div class="mb-3">
-          <router-link class="" tag="a" :to="{name:'Home'}">
-            <i class="fa fa-home fa-fw"></i> Home
+          <router-link class="font-weight-bold" tag="a" :to="{name:'Home'}">
+            <i class="fa fa-home fa-fw"></i> Go back a bit
           </router-link>
         </div>
         <div class="article" v-if="article">
@@ -28,8 +28,8 @@
           <div class="content" v-highlight v-html="markdownToHtml(article.body)"></div>
         </div>
         <div class="mt-5">
-          <router-link class="" tag="a" :to="{name:'Home'}">
-            <i class="fa fa-home fa-fw"></i> Home
+          <router-link class="font-weight-bold" tag="a" :to="{name:'Home'}">
+            <i class="fa fa-home fa-fw"></i> Go back a bit
           </router-link>
         </div>
       </div>

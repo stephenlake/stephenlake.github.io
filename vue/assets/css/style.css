@@ -103,6 +103,10 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px dotted #75c56e;
 }
 
+.article-preview .tag {
+  font-weight: 700;
+}
+
 .article-preview {
   cursor: pointer;
 }
@@ -130,12 +134,22 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 1s;
 }
 
+.article-preview .pastey {
+  transform: rotate(0);
+  transition: all 500ms;
+}
+
+.article-preview .pastey:hover {
+  transform: rotate(-4deg);
+  transition: all 500ms;
+}
+
 img.avatar {
   border-radius: 50%;
   padding: 3px;
   border: 1px solid #511b1f;
   transition: all 500ms;
-  width: 260px;
+  width: 225px;
   border: 2px solid #000;
 }
 
@@ -207,6 +221,11 @@ code {
   color: #7eb6f6;
 }
 
+.btn, .btn:hover, .btn:active, .btn:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
 code[class*="language-bash"], pre[class*="language-bash"] {
   color: #c9d8e8 !important;
 }
@@ -220,7 +239,7 @@ code[class*="language-bash"] .token.punctuation, pre[class*="language-bash"] .to
 }
 
 ::-webkit-scrollbar {
-  width: 8px !important;
+  width: 6px !important;
 }
 
 pre::-webkit-scrollbar {
@@ -233,11 +252,11 @@ pre::-webkit-scrollbar {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 12px;
-  background: #62b754 !important;
+  background: rgba(0, 0, 0, 0.2) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6bb95f !important;
+  background: rgba(0, 0, 0, 0.4) !important;
 }
 
 pre::-webkit-scrollbar-thumb {
