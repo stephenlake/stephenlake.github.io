@@ -46,12 +46,6 @@
               <i class="fa fa-linkedin fa-fw"></i>
             </a>
             <a class="btn"
-              title="Twitter"
-              target="_blank"
-              href="https://twitter.com/coresegfault">
-              <i class="fa fa-twitter fa-fw"></i>
-            </a>
-            <a class="btn"
               title="StackOverflow"
               target="_blank"
               href="https://stackoverflow.com/users/2634190/stephen-lake">
