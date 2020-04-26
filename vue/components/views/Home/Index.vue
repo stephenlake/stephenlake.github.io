@@ -36,11 +36,11 @@
                 target="_blank"
                 href="https://github.com/stephenlake">
                 <i class="fa fa-github fa-fw"></i> Github
-              </a> or <a class="btn p-0 m-0 font-weight-bold"
+              </a> or view my <a class="btn p-0 m-0 font-weight-bold"
                 title="Steam Group"
                 target="_blank"
                 href="https://steamcommunity.com/groups/developerrants">
-                <i class="fa fa-steam fa-fw"></i> join my Steam group
+                <i class="fa fa-steam fa-fw"></i> Steam group
               </a> to join in on some chat.</p>
           </div>
         </div>
