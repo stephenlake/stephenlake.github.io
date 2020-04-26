@@ -32,8 +32,8 @@ html {
 body {
   height: 100%;
   font-family: "Baloo 2";
-  color: #3c4858;
-  background: #ffffff;
+  color: #9ab3d4;
+  background: #0f1c29;
 }
 
 a {
@@ -63,86 +63,25 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Bellota Text'
 }
 
-.article h1 {
-  color: #3c4858;
-  text-decoration: none;
-  width: auto;
-  font-family: "Baloo 2";
-}
-
-.article p {
-  font-family: "Baloo 2";
-  font-size: 18px;
-}
-
-.article h1:first-of-type {
-  border-left: 3px solid #66cc56;
-  padding-left: 15px;
-  margin: 10px 0 5px;
-}
-
-.article .content h2, .article .content h3, .article .content h4 {
-  margin-top: 50px;
-}
-
-.article p img {
-  text-align: center !important;
-  display: block;
-  margin: 23px auto;
-  max-width: 100% !important;
-}
-
-.article p img.shadow {
-  -webkit-box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.31) !important;
-  box-shadow: 6px 5px 15px 0px rgba(29, 39, 48, 0.31) !important;
-}
-
-.article a, .article a:active, .article a:focus, .article a:visited, .article a:hover {
-  color: #75c56e !important;
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px dotted #75c56e;
-}
-
-.article-preview .tag {
-  font-weight: 700;
-}
-
-.article-preview {
-  cursor: pointer;
-}
-
-.article-preview h4 {
-  display: inline-block;
-  border-bottom: 2px solid transparent;
-}
-
-.article-preview:hover h4 {
-  border-bottom: 2px dotted lime;
-}
-
 .pastey {
   display: inline-block;
-  background: #ff8585;
+  background: #ce0909;
   transition: all 1s;
   padding: 0 6px;
+  color: #000;
 }
 
 img.avatar {
-  border-radius: 50%;
-  padding: 3px;
   border: 1px solid #511b1f;
   transition: all 500ms;
   width: 225px;
-  border: 2px solid #000;
+  filter: grayscale(20%);
+
 }
 
 img.avatar:hover {
-  border-style: dotted !important;
   transform: scale(1.05);
-  padding: 3px;
-  border: 1px solid #511b1f;
-  filter: grayscale(45%);
+  filter: grayscale(100%);
   transition: all 500ms;
 }
 
@@ -206,6 +145,7 @@ code {
 }
 
 .btn, .btn:hover, .btn:active, .btn:focus {
+  color: #ffffff;
   outline: 0 !important;
   box-shadow: none !important;
 }

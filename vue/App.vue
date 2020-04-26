@@ -1,7 +1,5 @@
 <template>
 <div>
-  <top-bar-line :thickness="2"
-    style="position: fixed;"></top-bar-line>
   <div class="container frame py-5">
     <transition :duration="transitions.duration"
       :enterActiveClass="transitions.enterActiveClass"
@@ -17,7 +15,6 @@ import Axios from 'axios'
 
 require('./assets/css/bootstrap.css');
 require('./assets/css/style.css');
-require('./assets/css/animate.css');
 
 export default {
   created() {
