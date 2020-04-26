@@ -23,11 +23,7 @@ export default {
   created() {
     this.$store.state.loading = true
     this.getPersona().then((r) => {
-      this.getArticles().then((r) => {
-        setTimeout(() => {
-          this.$store.state.loading = false
-        }, 500)
-      })
+      this.$store.state.loading = false
     })
   },
   data() {
@@ -48,24 +44,6 @@ export default {
       return new Promise((resolve, reject) => {
         Axios.get('https://api.github.com/users/stephenlake').then((r) => {
           this.$store.state.me = r.data
-          resolve(r)
-        }).catch((e) => {
-          reject(e)
-        })
-      })
-    },
-    getArticles(tags) {
-      return new Promise((resolve, reject) => {
-        let url = 'https://api.github.com/repos/stephenlake/stephenlake.github.io/issues?sort=created&direction=desc'
-
-        if (process.env.NODE_ENV === 'production') {
-          url += '&state=closed'
-        } else {
-          url += '&state=all'
-        }
-
-        Axios.get(url).then((r) => {
-          this.$store.state.articles = this.collect(r.data).where('user.login', 'stephenlake')
           resolve(r)
         }).catch((e) => {
           reject(e)

@@ -5,9 +5,6 @@ Vue.use(Vuex)
 
 const state = {
   me: false,
-  articles: false,
-  availableLabels: false,
-  filterLabel: '',
   loading: true,
 }
 
